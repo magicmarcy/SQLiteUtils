@@ -3,6 +3,9 @@
 SQLiteUtils is a utility to simplify the handling of a SQLite database in a Java application. SQLiteUtils uses various annotations to generically select or update data from the database.
 Using SQLiteUtils eliminates the need to create a separate entity and DTO.
 
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=ncloc)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=coverage)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+
 ## How to use
 1. Use the constructor to create a SQLite object and specify the full path to your SQLite database.
 2. Add the appropriate annotations to your table classes  
