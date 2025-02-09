@@ -5,6 +5,16 @@ Using SQLiteUtils eliminates the need to create a separate entity and DTO.
 
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=ncloc)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=coverage)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=alert_status)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=code_smells)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=sqale_index)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=alert_status)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=bugs)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=security_rating)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=magicmarcy_SQLiteUtils&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=magicmarcy_SQLiteUtils)
 
 ## How to use
 1. Use the constructor to create a SQLite object and specify the full path to your SQLite database.
