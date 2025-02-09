@@ -42,6 +42,7 @@ List<User> resultList = sqLiteUtils.executeSelect(User.class, conditions);
 - Deleting data records with just the given class
 - Extending the conditions with other operators
 - Additional JavaDoc
+- TestCases
 
 ## In Progress
 The whole project is still under construction and there are still some extensions to be done. However, the SQLiteUtils can already be used productively.
