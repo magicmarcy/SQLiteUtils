@@ -7,7 +7,7 @@ import de.magicmarcy.tableutils.SQLiteTableColumn;
  * be a "=" Condition generated at this time.
  * @author magicmarcy | 27.08.2024
  */
-public class SqlCondition {
+public class SQLiteCondition {
 
   /**
    * Column for the selection
@@ -19,7 +19,7 @@ public class SqlCondition {
    */
   private final Object conditionValue;
 
-  public SqlCondition(final SQLiteTableColumn column, final Object conditionValue) {
+  public SQLiteCondition(final SQLiteTableColumn column, final Object conditionValue) {
     this.column = column;
     this.conditionValue = conditionValue;
   }

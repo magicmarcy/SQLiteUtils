@@ -1,143 +1,112 @@
-package de.magicmarcy.table;
+package de.magicmarcy.democlass;
 
-import java.sql.ResultSet;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import de.magicmarcy.table.utils.SQLiteTable;
-import de.magicmarcy.table.utils.SQLiteTableColumn;
+import de.magicmarcy.annotation.SQLiteColumn;
+import de.magicmarcy.annotation.SQLiteConstructor;
+import de.magicmarcy.annotation.SQLiteTable;
 
 /**
+ * <strong>EN</strong><br/>
+ * This is an example of a class that represents both: A DTO and an entity.<br/>
+ * The {@link de.magicmarcy.annotation.SQLiteTable} annotation defines the name of the table in your SQLite database. Each field that represents a
+ * column in your table must be annotated with the {@link de.magicmarcy.annotation.SQLiteColumn} annotation. You must pass the name of the column
+ * and the data type of the value your column represents.<br/>
+ * There must be a constructor annotated with the {@link de.magicmarcy.annotation.SQLiteConstructor} annotation. This constructor must pass all
+ * fields annotated with the {@link de.magicmarcy.annotation.SQLiteColumn} annotation.<br/>
+ * There may be further constructors as well.
  * @author magicmarcy | 27.08.2024
  */
-public class User implements SQLiteTable {
+@SQLiteTable(name = "USER")
+public class User {
 
-  private static final String TABLE_USER = "USER";
-
-  private static final String COLUMN_ID = "ID";
-  private static final String COLUMN_USERNAME = "USERNAME";
-  private static final String COLUMN_PASSWORD = "PASSWORD";
-  private static final String COLUMN_EMAIL = "EMAIL";
-  private static final String COLUMN_CREATED = "CREATED";
-  private static final String COLUMN_LASTLOGIN = "LASTLOGIN";
-  private static final String COLUMN_LOGIN_COUNT = "LOGIN_COUNT";
-
+  @SQLiteColumn(columnName = "ID", dataType = Integer.class, primaryKey = true)
   private int id;
-  private String username;
-  private String password;
+
+  @SQLiteColumn(columnName = "EMAIL", dataType = String.class)
   private String email;
-  private LocalDate created;
-  private LocalDateTime lastLogin;
-  private int loginCount;
+
+  @SQLiteColumn(columnName = "PASS", dataType = String.class)
+  private String password;
+
+  @SQLiteColumn(columnName = "NAME", dataType = String.class)
+  private String name;
+
+  @SQLiteColumn(columnName = "ROLE_ID", dataType = Integer.class, defaultValue = "0")
+  private int roleid;
+
+  @SQLiteColumn(columnName = "EXPIRES", dataType = Integer.class, defaultValue = "0")
+  private int expires;
 
   public User() {
     super();
   }
 
-  public User(int id, String username, String password, String email, LocalDate created, LocalDateTime lastLogin, int loginCount) {
+  @SQLiteConstructor
+  public User(final int id, final String email, final String pass, final String name, final int roleid, final int expires) {
     this.id = id;
-    this.username = username;
-    this.password = password;
     this.email = email;
-    this.created = created;
-    this.lastLogin = lastLogin;
-    this.loginCount = loginCount;
-  }
-
-  public User selectById(final int id) {
-    return null;
-  }
-
-  public List<User> selectBy() {
-    return null;
+    this.password = pass;
+    this.name = name;
+    this.roleid = roleid;
+    this.expires = expires;
   }
 
   public int getId() {
-    return id;
+    return this.id;
   }
 
-  public void setId(int id) {
+  public void setId(final int id) {
     this.id = id;
   }
 
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
   public String getEmail() {
-    return email;
+    return this.email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(final String email) {
     this.email = email;
   }
 
-  public LocalDate getCreated() {
-    return created;
+  public String getPassword() {
+    return this.password;
   }
 
-  public void setCreated(LocalDate created) {
-    this.created = created;
+  public void setPassword(final String password) {
+    this.password = password;
   }
 
-  public LocalDateTime getLastLogin() {
-    return lastLogin;
+  public String getName() {
+    return this.name;
   }
 
-  public void setLastLogin(LocalDateTime lastLogin) {
-    this.lastLogin = lastLogin;
+  public void setName(final String name) {
+    this.name = name;
   }
 
-  public int getLoginCount() {
-    return loginCount;
+  public int getRoleid() {
+    return this.roleid;
   }
 
-  public void setLoginCount(int loginCount) {
-    this.loginCount = loginCount;
+  public void setRoleid(final int roleid) {
+    this.roleid = roleid;
   }
 
-  @Override
-  public String name() {
-    return TABLE_USER;
+  public int getExpires() {
+    return this.expires;
   }
 
-  @Override
-  public List<SQLiteTableColumn> columns() {
-    return List.of(
-        SQLiteTableColumn.ofString(COLUMN_ID).primaryKey(),
-        SQLiteTableColumn.ofString(COLUMN_USERNAME),
-        SQLiteTableColumn.ofString(COLUMN_PASSWORD),
-        SQLiteTableColumn.ofString(COLUMN_EMAIL),
-        SQLiteTableColumn.ofString(COLUMN_CREATED),
-        SQLiteTableColumn.ofString(COLUMN_LASTLOGIN),
-        SQLiteTableColumn.ofInteger(COLUMN_LOGIN_COUNT)
-    );
+  public void setExpires(final int expires) {
+    this.expires = expires;
   }
 
   @Override
   public String toString() {
     return "User{" +
-        "id=" + id +
-        ", username='" + username + '\'' +
-        ", password='" + password + '\'' +
-        ", email='" + email + '\'' +
-        ", created=" + created +
-        ", lastLogin=" + lastLogin +
-        ", loginCount=" + loginCount +
+        "id=" + this.id +
+        ", email='" + this.email + '\'' +
+        ", password='" + this.password + '\'' +
+        ", name='" + this.name + '\'' +
+        ", roleid=" + this.roleid +
+        ", expires=" + this.expires +
         '}';
   }
 }

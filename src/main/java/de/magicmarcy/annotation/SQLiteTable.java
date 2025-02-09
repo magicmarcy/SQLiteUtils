@@ -10,6 +10,10 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface SQLiteTableName {
+public @interface SQLiteTable {
+
+  /**
+   * Column name
+   */
   String name();
 }
