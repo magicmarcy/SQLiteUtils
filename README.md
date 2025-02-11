@@ -36,6 +36,8 @@ Do **not** use Lombok in your classes that represent the table! You need to anno
 ```
 @SQLiteTable(name = "USER")
 public class User {
+  ...
+}
 ```
 
 ### @SQLiteColumn
