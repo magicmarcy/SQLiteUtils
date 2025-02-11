@@ -30,7 +30,14 @@ Using SQLiteUtils eliminates the need to create a separate entity and DTO.
 The properties assigned to each column ensure that all required tables are created when SQLiteUtils is initialized, if they do not already exist. 
 
 **IMPORTANT NOTE:**  
-Do **not** use Lombok in your classes that represent the table! You need to annotate your AllArgConstrunctor with the @SQLiteConstructor annotation, which collides with the generated constructor of Lombok.
+If you are using Lombok and want to use the AllAlgsConstructor-annotation you have to pass the SQLiteTable-Annotation through the "onConstructor"-attribute.  
+Example:
+```
+@AllArgsConstructor(onConstructor_ = @SQLiteTable(name = "USER"))
+public class User {
+  ...
+}
+```
 
 ### @SQLiteTable
 ```
